@@ -26,10 +26,12 @@ public class MainMenu extends AppCompatActivity {
         updateTextView("$" + Integer.toString(0), R.id.amount);
         updateTextView("--" + " Days", R.id.trigger);
 
+        user = new User("User", "", "", 0, 25, "", false, 0,0,0 );
+
+
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras != null) {
-                user = new User("User", "", "", 0, 25, "", false, 0,0,0 );
                 if(extras.getString("name") != null) {
                     user.setName(extras.getString("name"));
                 }

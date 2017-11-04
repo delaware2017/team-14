@@ -37,7 +37,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     i.putExtra("phone", Integer.parseInt(phone.getText().toString()));
                     i.putExtra("password", password.getText().toString());
                     i.putExtra("numFamily", Integer.parseInt(numFamiliy.getText().toString()));
-                    i.putExtra("doctorID", Integer.parseInt(clinicID.getText().toString()));
+                    i.putExtra("clinicID", Integer.parseInt(clinicID.getText().toString()));
                     i.putExtra("triggerTime", Integer.parseInt(triggerTime.getText().toString()));
                     startActivity(i);
                 }
