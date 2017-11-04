@@ -26,7 +26,7 @@ public class MainMenu extends AppCompatActivity {       //define main menu class
         updateTextView("$" + Integer.toString(0), R.id.amount); //Show the balance
         updateTextView("--" + " Days", R.id.trigger);      //Show the remaining days
 
-        user = new User("User", "", "", 0, 25, "", false, 0,0,0 );
+        user = new User("User", "", "", 0, 25, "", false, 0,0,0 ); //instance of the user class
 
 
         if (savedInstanceState == null) {
