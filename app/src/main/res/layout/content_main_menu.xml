@@ -6,63 +6,33 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.kaleb.wavealpha.MainMenu"
-    tools:showIn="@layout/activity_main_menu">
+    tools:showIn="@layout/activity_main_menu"
+    android:layout_weight="100">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_gravity="center">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="$500"
             android:layout_weight="1"
-            android:layout_gravity="center">
+            android:gravity="center_horizontal"
+            android:textSize="25dp"
+            />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="$500"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="18 Days"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="18 Days"
             android:layout_weight="1"
-            android:layout_gravity="center">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Nearby Stores"
-                android:layout_weight="1"
-                android:layout_gravity="center"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Get Voucher"
-                android:layout_weight="1"
-                android:layout_gravity="center"/>
-
-
-        </LinearLayout>
-
+            android:gravity="center_horizontal"
+            android:textSize="25dp"/>
 
 
     </LinearLayout>
