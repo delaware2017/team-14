@@ -326,8 +326,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             // TODO: register the new account here.
             Intent i = new Intent(getApplicationContext(), MainMenu.class);
-            i.putExtra("Email", mEmail);
-            i.putExtra("Password", mPassword);
+//            i.putExtra("Email", mEmail);
+//            i.putExtra("Password", mPassword);
             startActivity(i);
 
 
