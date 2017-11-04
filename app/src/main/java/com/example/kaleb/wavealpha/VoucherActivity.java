@@ -10,26 +10,18 @@ import android.view.View;
 import android.widget.Button;
 
 
+/*<<<<<<< HEAD
+=======
+
+>>>>>>> 7e1132685a5fdebbb638da432b51df72ef2c53f2*/
 public class VoucherActivity extends AppCompatActivity {
     TextView showValue;
-    int counter;
-    int balance;
+    int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voucher);
-
-        showValue = (TextView) findViewById(R.id.counter);
-
-        if (savedInstanceState == null) {
-            Bundle extras = getIntent().getExtras();
-            if (extras != null) {
-                balance = extras.getInt("balance");
-                counter = balance;
-                updateTextView(Integer.toString(counter),R.id.counter);
-            }
-        }
 
         int threshold = 5;
         int width = getResources().getDisplayMetrics().widthPixels/threshold;
@@ -43,30 +35,46 @@ public class VoucherActivity extends AppCompatActivity {
         ImageButton home =(ImageButton) findViewById(R.id.home);
         home.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MainMenu.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
         ImageButton calender =(ImageButton) findViewById(R.id.calendar);
         calender.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
         ImageButton settings =(ImageButton) findViewById(R.id.settings);
         settings.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), SettingsMenu.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
         Button generateQrCode = (Button) findViewById(R.id.generate_qr_code);
         generateQrCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),qr_code.class);
-                i.putExtra("spent", counter);
                 startActivity(i);
                 finish();
             }
         });
 
 
-
+        showValue = (TextView) findViewById(R.id.counter);
     }
 
     public void countIN (View view){
-        if(counter != balance)
-            counter++;
+        counter++;
         showValue.setText(Integer.toString(counter));
     }
     public void countDE (View v){
@@ -74,10 +82,4 @@ public class VoucherActivity extends AppCompatActivity {
             counter--;
         showValue.setText(Integer.toString(counter));
     }
-
-    public void updateTextView(String toThis, int view) {
-        TextView textView = (TextView) findViewById(view);
-        textView.setText(toThis);
-    }
-
 }

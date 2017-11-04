@@ -9,19 +9,10 @@ import android.widget.LinearLayout;
 
 public class qr_code extends AppCompatActivity {
 
-    int counter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code);
-
-        if (savedInstanceState == null) {
-            Bundle extras = getIntent().getExtras();
-            if (extras != null) {
-                counter = extras.getInt("spent");
-            }
-        }
 
         int threshold = 5;
         int width = getResources().getDisplayMetrics().widthPixels/threshold;
@@ -32,8 +23,26 @@ public class qr_code extends AppCompatActivity {
         ImageButton voucher =(ImageButton) findViewById(R.id.voucher);
         voucher.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
+        voucher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),VoucherActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
         ImageButton home =(ImageButton) findViewById(R.id.home);
         home.setLayoutParams(new LinearLayout.LayoutParams(width,width));
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MainMenu.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         ImageButton calender =(ImageButton) findViewById(R.id.calendar);
         calender.setLayoutParams(new LinearLayout.LayoutParams(width,width));
@@ -41,17 +50,13 @@ public class qr_code extends AppCompatActivity {
         ImageButton settings =(ImageButton) findViewById(R.id.settings);
         settings.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
-        home.setOnClickListener(new View.OnClickListener() {
+        settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), MainMenu.class);
-                i.putExtra("spent", counter);
+                Intent i = new Intent(getApplicationContext(), SettingsMenu.class);
                 startActivity(i);
                 finish();
             }
         });
-
-
     }
-
 }
