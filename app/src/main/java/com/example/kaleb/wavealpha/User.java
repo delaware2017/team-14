@@ -88,7 +88,7 @@ public class User {
         this.status = status;
     }
 
-    public User(String name, String email, String addr, int phoneNo, int balance, String password, boolean status) {
+    public User(String name, String email, String addr, int phoneNo, int balance, String password, boolean status, int familyMembers, int clinicID, int triggerTime) {
         this.name = name;
         this.email = email;
         this.addr = addr;
@@ -96,6 +96,9 @@ public class User {
         this.balance = balance;
         this.password = password;
         this.status = status;
+        this.clinicID = clinicID;
+        this.familyMembers = familyMembers;
+        this.triggerTime = triggerTime;
     }
 
     public int makePurchase(int purchaseCost) {

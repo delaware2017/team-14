@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainMenu extends AppCompatActivity {
 
-    User user = new User("User", "", "", 0, 0, "", false );
+    User user;
 
 
     @Override
@@ -21,18 +21,31 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("Hello User!");
+
+        user = new User("User", "", "", 0, 25, "", false, 0,0,0 );
+
+        setTitle("Hello " + user.getName() + "!");
+        updateTextView("$" + Integer.toString(user.getBalance()), R.id.amount);
+        updateTextView(Integer.toString(user.getTriggerTime()) + " Days", R.id.trigger);
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras != null) {
-                user.setName(extras.getString("name"));
+                if(extras.getString("name") != null) {
+                    user.setName(extras.getString("name"));
+                }
+                else{
+                    user.setBalance(user.getBalance()- extras.getInt("spent"));
+                    updateTextView("$" + Integer.toString(user.getBalance()), R.id.amount);
+                }
                 user.setEmail(extras.getString("email"));
                 user.setAddr(extras.getString("address"));
                 user.setPhoneNo(extras.getInt("phone"));
                 user.setPassword(extras.getString("password"));
                 user.setStatus(true);
-                Log.d("Balance", Integer.toString(user.getBalance()));
+                user.setClinicID(extras.getInt("clinicID"));
+                user.setTriggerTime(extras.getInt("triggerTime"));
+                user.setFamilyMembers(extras.getInt("numFamily"));
                 updateTextView("$" + Integer.toString(user.getBalance()), R.id.amount);
                 updateTextView(Integer.toString(user.getTriggerTime()) + " Days", R.id.trigger);
                 setTitle("Hello " + user.getName() + "!");
@@ -66,7 +79,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),VoucherActivity.class);
-                i.putExtra("Balance", user.getBalance());
+                i.putExtra("balance", user.getBalance());
                 startActivity(i);
                 finish();
             }

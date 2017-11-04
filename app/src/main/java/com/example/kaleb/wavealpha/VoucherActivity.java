@@ -10,18 +10,26 @@ import android.view.View;
 import android.widget.Button;
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7e1132685a5fdebbb638da432b51df72ef2c53f2
 public class VoucherActivity extends AppCompatActivity {
     TextView showValue;
-    int counter = 0;
+    int counter;
+    int balance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voucher);
+
+        showValue = (TextView) findViewById(R.id.counter);
+
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if (extras != null) {
+                balance = extras.getInt("balance");
+                counter = balance;
+                updateTextView(Integer.toString(counter),R.id.counter);
+            }
+        }
 
         int threshold = 5;
         int width = getResources().getDisplayMetrics().widthPixels/threshold;
@@ -46,17 +54,19 @@ public class VoucherActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),qr_code.class);
+                i.putExtra("spent", counter);
                 startActivity(i);
                 finish();
             }
         });
 
 
-        showValue = (TextView) findViewById(R.id.counter);
+
     }
 
     public void countIN (View view){
-        counter++;
+        if(counter != balance)
+            counter++;
         showValue.setText(Integer.toString(counter));
     }
     public void countDE (View v){
@@ -64,4 +74,10 @@ public class VoucherActivity extends AppCompatActivity {
             counter--;
         showValue.setText(Integer.toString(counter));
     }
+
+    public void updateTextView(String toThis, int view) {
+        TextView textView = (TextView) findViewById(view);
+        textView.setText(toThis);
+    }
+
 }
