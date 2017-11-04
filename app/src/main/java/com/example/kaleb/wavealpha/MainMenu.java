@@ -19,25 +19,23 @@ public class MainMenu extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        int threshold = 4;
+
         Button b =(Button) findViewById(R.id.stores);
-        int width = getResources().getDisplayMetrics().widthPixels/4;
-        int hei=getResources().getDisplayMetrics().heightPixels/4;
-        b.setLayoutParams(new LinearLayout.LayoutParams(width,hei));
+        int width = getResources().getDisplayMetrics().widthPixels/threshold;
+        b.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
         b =(Button) findViewById(R.id.voucher);
-        width = getResources().getDisplayMetrics().widthPixels/4;
-        hei=getResources().getDisplayMetrics().heightPixels/4;
-        b.setLayoutParams(new LinearLayout.LayoutParams(width,hei));
+        width = getResources().getDisplayMetrics().widthPixels/threshold;
+        b.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
         b =(Button) findViewById(R.id.calendar);
-        width = getResources().getDisplayMetrics().widthPixels/4;
-        hei=getResources().getDisplayMetrics().heightPixels/4;
-        b.setLayoutParams(new LinearLayout.LayoutParams(width,hei));
+        width = getResources().getDisplayMetrics().widthPixels/threshold;
+        b.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
         b =(Button) findViewById(R.id.settings);
-        width = getResources().getDisplayMetrics().widthPixels/4;
-        hei=getResources().getDisplayMetrics().heightPixels/4;
-        b.setLayoutParams(new LinearLayout.LayoutParams(width,hei));
+        width = getResources().getDisplayMetrics().widthPixels/threshold;
+        b.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
     }
 }
