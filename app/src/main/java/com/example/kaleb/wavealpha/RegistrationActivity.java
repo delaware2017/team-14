@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                EditText email = (EditText) findViewById(R.id.input_email);
                 //createAccount(); // Implement
                 Log.d("emailTest", email.getText().toString());
             }
