@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 
 
-import java.awt.Image;
 
 public class VoucherActivity extends AppCompatActivity {
     TextView showValue;
