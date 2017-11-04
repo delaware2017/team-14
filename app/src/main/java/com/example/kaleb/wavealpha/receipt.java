@@ -11,7 +11,6 @@ public class receipt {
     private Date transaction_date;
     private String time;
     private double total_amount;
-    private String ssn;
     private String store_ID;
 
     public double getTransaction_num() {
@@ -44,14 +43,6 @@ public class receipt {
 
     public void setTotal_amount(double total_amount) {
         this.total_amount = total_amount;
-    }
-
-    public String getSsn() {
-        return ssn;
-    }
-
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
     }
 
     public String getStore_ID() {

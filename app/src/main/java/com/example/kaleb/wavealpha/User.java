@@ -8,14 +8,11 @@ import java.util.Date;
 
 public class User {
 
-    private String ssn, firstName, lastName, email, addr;
+    private String firstName, lastName, email, addr;
     private int age, phoneNo, balance;
     private Date dob;
     private boolean status;
 
-    public String getSsn() {
-        return ssn;
-    }
 
     public void setSsn(String ssn) {
         this.ssn = ssn;
@@ -93,8 +90,21 @@ public class User {
         this.status = status;
     }
 
+    public User(String firstName, String lastName, String email, String addr, int age, int phoneNo, int balance, Date dob, boolean status) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.addr = addr;
+        this.age = age;
+        this.phoneNo = phoneNo;
+        this.balance = balance;
+        this.dob = dob;
+        this.status = status;
+    }
+
     public int makePurchase(int purchaseCost) {
         return getBalance() - purchaseCost;
+
 
     }
 }

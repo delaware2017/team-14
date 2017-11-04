@@ -100,6 +100,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
+        Button signUpButton = (Button) findViewById(R.id.btn_signup);
+        registerButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createAccount(); // Implement
+            }
+        });
+
+
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
@@ -145,6 +154,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 populateAutoComplete();
             }
         }
+    }
+
+    private void createAccount() {
+        User newAccount = new User(firstName, lastName, email, addr, age, phoneNo, balance, dob, status);
+        // Need to grab data from registration page
     }
 
 
