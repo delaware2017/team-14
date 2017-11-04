@@ -8,10 +8,33 @@ package com.example.kaleb.wavealpha;
 public class User {
 
     private String name, email, addr;
-    private int phoneNo, balance;
+    private int phoneNo, balance, familyMembers, clinicID, triggerTime;
     private boolean status;
     private String password;
 
+    public int getTriggerTime() {
+        return triggerTime;
+    }
+
+    public void setTriggerTime(int triggerTime) {
+        this.triggerTime = triggerTime;
+    }
+
+    public int getClinicID() {
+        return clinicID;
+    }
+
+    public void setClinicID(int clinicID) {
+        this.clinicID = clinicID;
+    }
+
+    public int getFamilyMembers() {
+        return familyMembers;
+    }
+
+    public void setFamilyMembers(int familyMembers) {
+        this.familyMembers = familyMembers;
+    }
 
     public String getName() {
         return name;

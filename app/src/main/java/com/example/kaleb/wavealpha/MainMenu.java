@@ -65,7 +65,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),VoucherActivity.class);
-                //put extra to send balance
+                i.putExtra("Balance", user.getBalance());
                 startActivity(i);
                 finish();
             }

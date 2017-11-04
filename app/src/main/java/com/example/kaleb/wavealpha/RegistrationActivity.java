@@ -25,6 +25,9 @@ public class RegistrationActivity extends AppCompatActivity {
                 EditText address = (EditText) findViewById(R.id.input_address);
                 EditText phone = (EditText) findViewById(R.id.input_mobile);
                 EditText password = (EditText) findViewById(R.id.input_password); // need to hash later
+                EditText numFamiliy = (EditText) findViewById(R.id.input_numOfFamilyMembers);
+                EditText clinicID = (EditText) findViewById(R.id.input_clinicID);
+                EditText triggerTime = (EditText) findViewById(R.id.input_triggerTime);
 
                 try {
                     Intent i = new Intent(getApplicationContext(), MainMenu.class);
@@ -33,6 +36,9 @@ public class RegistrationActivity extends AppCompatActivity {
                     i.putExtra("address", address.getText().toString());
                     i.putExtra("phone", Integer.parseInt(phone.getText().toString()));
                     i.putExtra("password", password.getText().toString());
+                    i.putExtra("numFamily", Integer.parseInt(numFamiliy.getText().toString()));
+                    i.putExtra("clinicID", Integer.parseInt(clinicID.getText().toString()));
+                    i.putExtra("triggerTime", Integer.parseInt(triggerTime.getText().toString()));
                     startActivity(i);
                 }
 

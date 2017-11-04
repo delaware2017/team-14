@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/team-14.iml" filepath="$PROJECT_DIR$/team-14.iml" />
-=======
       <module fileurl="file://$PROJECT_DIR$/WaveAlpha.iml" filepath="$PROJECT_DIR$/WaveAlpha.iml" />
-      <module fileurl="file://C:\Users\Nati\AndroidStudioProjects\team-14\WaveAlpha.iml" filepath="C:\Users\Nati\AndroidStudioProjects\team-14\WaveAlpha.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\kaleb\AndroidStudioProjects\WaveAlpha\team-14.iml" filepath="C:\Users\kaleb\AndroidStudioProjects\WaveAlpha\team-14.iml" />
->>>>>>> 508b6e12f945c21ce4474f6695e8d1a840ffd69f
     </modules>
   </component>
 </project>
