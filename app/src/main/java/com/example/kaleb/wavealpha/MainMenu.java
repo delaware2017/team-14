@@ -69,6 +69,22 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MainMenu.class);
+                startActivity(i);
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), SettingsMenu.class);
+                startActivity(i);
+            }
+        });
+
     }
 
     public void updateTextView(String toThis, int view) {
