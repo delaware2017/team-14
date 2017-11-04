@@ -8,20 +8,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class RegistrationActivity extends AppCompatActivity {
+public class RegistrationActivity extends AppCompatActivity {   //registration class for registration page
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        Button signUpButton = (Button) findViewById(R.id.btn_signup);
+        Button signUpButton = (Button) findViewById(R.id.btn_signup);   //create a signup button
         signUpButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                EditText email = (EditText) findViewById(R.id.input_email);
-                EditText name = (EditText) findViewById(R.id.input_name);
+                EditText email = (EditText) findViewById(R.id.input_email);        //get the required data from the fields in the app
+                EditText name = (EditText) findViewById(R.id.input_name);          //for the enrollment
                 EditText address = (EditText) findViewById(R.id.input_address);
                 EditText phone = (EditText) findViewById(R.id.input_mobile);
                 EditText password = (EditText) findViewById(R.id.input_password); // need to hash later
@@ -30,7 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 EditText triggerTime = (EditText) findViewById(R.id.input_triggerTime);
 
                 try {
-                    Intent i = new Intent(getApplicationContext(), MainMenu.class);
+                    Intent i = new Intent(getApplicationContext(), MainMenu.class); //use the data that the user input across activities
                     i.putExtra("name", name.getText().toString());
                     i.putExtra("email", email.getText().toString());
                     i.putExtra("address", address.getText().toString());
@@ -43,7 +43,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
 
                 catch (Exception e){
-                    Log.d("Exception", e.toString());
+                    Log.d("Exception", e.toString());  //Error-checking. Raise an exception!
                 }
             }
         });
