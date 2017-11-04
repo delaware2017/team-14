@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class User {
 
-    private String firstName, lastName, email, addr;
+    private String firstName, lastName, email, addr, ssn;
     private int age, phoneNo, balance;
     private Date dob;
     private boolean status;
