@@ -32,6 +32,7 @@ public class MainMenu extends AppCompatActivity {
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras != null) {
+                user = new User("User", "", "", 0, 25, "", false, 0,0,0 );  //create a "User" instance
                 if(extras.getString("name") != null) {
                     user.setName(extras.getString("name"));
                 }
