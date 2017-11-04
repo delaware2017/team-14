@@ -311,7 +311,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             try {
                 // Simulate network access.
-                Thread.sleep(2000);
+                Thread.sleep(0);
             } catch (InterruptedException e) {
                 return false;
             }
@@ -326,6 +326,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             // TODO: register the new account here.
             Intent i = new Intent(getApplicationContext(), MainMenu.class);
+            i.putExtra("Email", mEmail);
+            i.putExtra("Password", mPassword);
             startActivity(i);
 
 
