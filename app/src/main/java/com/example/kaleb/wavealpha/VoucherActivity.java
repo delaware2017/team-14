@@ -1,11 +1,16 @@
 package com.example.kaleb.wavealpha;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.view.View;
+import android.widget.Button;
+
+
+import java.awt.Image;
 
 public class VoucherActivity extends AppCompatActivity {
     TextView showValue;
@@ -33,6 +38,17 @@ public class VoucherActivity extends AppCompatActivity {
 
         ImageButton settings =(ImageButton) findViewById(R.id.settings);
         settings.setLayoutParams(new LinearLayout.LayoutParams(width,width));
+
+        Button generateQrCode = (Button) findViewById(R.id.generate_qr_code);
+        generateQrCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),qr_code.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
 
         showValue = (TextView) findViewById(R.id.counter);
     }
