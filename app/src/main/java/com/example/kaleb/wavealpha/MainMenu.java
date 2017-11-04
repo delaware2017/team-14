@@ -33,7 +33,7 @@ public class MainMenu extends AppCompatActivity {
                 user.setPassword(extras.getString("password"));
                 user.setStatus(true);
                 Log.d("Balance", Integer.toString(user.getBalance()));
-                updateTextView(Integer.toString(user.getBalance()), R.id.amount);
+                updateTextView("$" + Integer.toString(user.getBalance()), R.id.amount);
                 setTitle("Hello " + user.getName() + "!");
             }
         }
@@ -65,6 +65,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),VoucherActivity.class);
+                //put extra to send balance
                 startActivity(i);
                 finish();
             }
