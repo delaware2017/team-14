@@ -4,8 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.view.View;
 
 public class VoucherActivity extends AppCompatActivity {
+    TextView showValue;
+    int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,5 +33,17 @@ public class VoucherActivity extends AppCompatActivity {
 
         ImageButton settings =(ImageButton) findViewById(R.id.settings);
         settings.setLayoutParams(new LinearLayout.LayoutParams(width,width));
+
+        showValue = (TextView) findViewById(R.id.counter);
+    }
+
+    public void countIN (View view){
+        counter++;
+        showValue.setText(Integer.toString(counter));
+    }
+    public void countDE (View v){
+        if(counter != 0)
+            counter--;
+        showValue.setText(Integer.toString(counter));
     }
 }
