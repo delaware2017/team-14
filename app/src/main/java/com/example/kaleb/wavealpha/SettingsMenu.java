@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class SettingsMenu extends AppCompatActivity {
 
@@ -13,6 +14,9 @@ public class SettingsMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_menu);
+        setTitle("Settings");
+
+
 
         int threshold = 5;
         int width = getResources().getDisplayMetrics().widthPixels/threshold;
@@ -50,5 +54,11 @@ public class SettingsMenu extends AppCompatActivity {
         ImageButton settings =(ImageButton) findViewById(R.id.settings);
         settings.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
+
+    }
+
+    public void updateTextView(String toThis, int view) {
+        TextView textView = (TextView) findViewById(view);
+        textView.setText(toThis);
     }
 }
