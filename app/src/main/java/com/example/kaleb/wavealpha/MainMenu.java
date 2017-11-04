@@ -1,5 +1,6 @@
 package com.example.kaleb.wavealpha;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -41,7 +42,8 @@ public class MainMenu extends AppCompatActivity {
         voucher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i = new Intent(getApplicationContext(),VoucherActivity.class);
+                startActivity(i);
             }
         });
 
