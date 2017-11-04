@@ -1,6 +1,5 @@
 package com.example.kaleb.wavealpha;
 
-import java.util.Date;
 
 /**
  * Created by vqn on 11/3/17.
@@ -8,30 +7,22 @@ import java.util.Date;
 
 public class User {
 
-    private String firstName, lastName, email, addr, ssn;
-    private int age, phoneNo, balance;
-    private Date dob;
+    private String name, email, addr;
+    private int phoneNo, balance;
     private boolean status;
+    private String password;
 
 
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
+    public String getName() {
+        return name;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -50,14 +41,6 @@ public class User {
         this.addr = addr;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public int getPhoneNo() {
         return phoneNo;
     }
@@ -74,14 +57,6 @@ public class User {
         this.balance = balance;
     }
 
-    public Date getDob() {
-        return dob;
-    }
-
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }
-
     public boolean isStatus() {
         return status;
     }
@@ -90,15 +65,13 @@ public class User {
         this.status = status;
     }
 
-    public User(String firstName, String lastName, String email, String addr, int age, int phoneNo, int balance, Date dob, boolean status) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String name, String email, String addr, int phoneNo, int balance, String password, boolean status) {
+        this.name = name;
         this.email = email;
         this.addr = addr;
-        this.age = age;
         this.phoneNo = phoneNo;
         this.balance = balance;
-        this.dob = dob;
+        this.password = password;
         this.status = status;
     }
 
