@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nati.test.MainActivity">
+    tools:context="com.example.kaleb.wavealpha.VoucherActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button1"
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="87dp"
         android:layout_height="85dp"
@@ -54,5 +54,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>
