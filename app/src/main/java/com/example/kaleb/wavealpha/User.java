@@ -5,14 +5,14 @@ package com.example.kaleb.wavealpha;
  * Created by vqn on 11/3/17.
  */
 
-public class User {
+public class User {             //a basic public class for holding user information
 
-    private String name, email, addr;
+    private String name, email, addr;             //define the attributes
     private int phoneNo, balance, familyMembers, clinicID, triggerTime;
     private boolean status;
     private String password;
 
-    public int getTriggerTime() {
+    public int getTriggerTime() {               //definitions for setters and getters
         return triggerTime;
     }
 
@@ -89,7 +89,7 @@ public class User {
     }
 
     public User(String name, String email, String addr, int phoneNo, int balance, String password, boolean status, int familyMembers, int clinicID, int triggerTime) {
-        this.name = name;
+        this.name = name;                   //"User" class constructor
         this.email = email;
         this.addr = addr;
         this.phoneNo = phoneNo;
@@ -101,8 +101,8 @@ public class User {
         this.triggerTime = triggerTime;
     }
 
-    public int makePurchase(int purchaseCost) {
-        return getBalance() - purchaseCost;
+    public int makePurchase(int purchaseCost) {     //purchase function for the user that returns the remaining balance
+        return getBalance() - purchaseCost;         //after the transaction
 
 
     }
