@@ -101,16 +101,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        Button signUpButton = (Button) findViewById(R.id.btn_signup);
-        registerButton.setOnClickListener(new OnClickListener() {
-            EditText email = (EditText) findViewById(R.id.email);
-
-            @Override
-            public void onClick(View view) {
-                //createAccount(); // Implement
-                Log.d("emailTest", email.getText().toString());
-            }
-        });
+//        Button signUpButton = (Button) findViewById(R.id.btn_signup);
+//        registerButton.setOnClickListener(new OnClickListener() {
+//            EditText email = (EditText) findViewById(R.id.email);
+//
+//            @Override
+//            public void onClick(View view) {
+//                //createAccount(); // Implement
+//                Log.d("emailTest", email.getText().toString());
+//            }
+//        });
 
 
         mLoginFormView = findViewById(R.id.login_form);
