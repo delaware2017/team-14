@@ -21,7 +21,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".VoucherActivity" />
-        <activity android:name=".SettingsMenu"></activity>
+        <activity android:name=".SettingsMenu" />
+        <activity android:name=".qr_code"></activity>
     </application>
 
 </manifest>
