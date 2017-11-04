@@ -98,7 +98,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), RegistrationActivity.class);
                 startActivity(i);
-                Log.v("test", "test");
             }
         });
 
