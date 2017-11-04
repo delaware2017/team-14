@@ -14,7 +14,7 @@
         android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/Voucher"
+        android:id="@+id/voucher"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="Get Voucher"
