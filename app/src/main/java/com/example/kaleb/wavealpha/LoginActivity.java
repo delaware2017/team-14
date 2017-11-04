@@ -3,6 +3,7 @@ package com.example.kaleb.wavealpha;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -324,6 +325,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
 
             // TODO: register the new account here.
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
+
+
+
             return true;
         }
 
