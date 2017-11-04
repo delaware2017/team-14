@@ -40,7 +40,7 @@ public class MainMenu extends AppCompatActivity {       //define main menu class
                     user.setBalance(user.getBalance()- extras.getInt("spent"));
                     updateTextView("$" + Integer.toString(user.getBalance()), R.id.amount);
                 }
-                user.setEmail(extras.getString("email"));
+                user.setEmail(extras.getString("email"));       //set the attributes
                 user.setAddr(extras.getString("address"));
                 user.setPhoneNo(extras.getInt("phone"));
                 user.setPassword(extras.getString("password"));
@@ -62,7 +62,7 @@ public class MainMenu extends AppCompatActivity {       //define main menu class
         int threshold = 5;
         int width = getResources().getDisplayMetrics().widthPixels/threshold;
 
-        ImageButton stores =(ImageButton) findViewById(R.id.stores);
+        ImageButton stores =(ImageButton) findViewById(R.id.stores);            //define the buttons
         stores.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
         ImageButton voucher =(ImageButton) findViewById(R.id.voucher);
@@ -77,7 +77,7 @@ public class MainMenu extends AppCompatActivity {       //define main menu class
         ImageButton settings =(ImageButton) findViewById(R.id.settings);
         settings.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
-        voucher.setOnClickListener(new View.OnClickListener() {
+        voucher.setOnClickListener(new View.OnClickListener() {         //define the On click listeners
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),VoucherActivity.class);
@@ -104,7 +104,7 @@ public class MainMenu extends AppCompatActivity {       //define main menu class
 
     }
 
-    public void updateTextView(String toThis, int view) {
+    public void updateTextView(String toThis, int view) {       //update the text view for the activity
         TextView textView = (TextView) findViewById(view);
         textView.setText(toThis);
     }
