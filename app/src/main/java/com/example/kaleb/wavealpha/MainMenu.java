@@ -34,6 +34,7 @@ public class MainMenu extends AppCompatActivity {
                 user.setStatus(true);
                 Log.d("Balance", Integer.toString(user.getBalance()));
                 updateTextView("$" + Integer.toString(user.getBalance()), R.id.amount);
+                updateTextView(Integer.toString(user.getTriggerTime()) + " Days", R.id.trigger);
                 setTitle("Hello " + user.getName() + "!");
             }
         }

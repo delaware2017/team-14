@@ -66,7 +66,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="18 Days"
+                android:text="-- Days"
+                android:id="@+id/trigger"
                 android:layout_weight="1"
                 android:textSize="25dp"
                 android:layout_gravity="left"/>
