@@ -158,7 +158,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private void createAccount() {
         User newAccount = new User(firstName, lastName, email, addr, age, phoneNo, balance, dob, status);
-        // Need to grab data from registration page
+        // Need to grab data from registration paged
     }
 
 
