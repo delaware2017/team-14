@@ -43,7 +43,7 @@ public class RegistrationActivity extends AppCompatActivity {   //registration c
                 }
 
                 catch (Exception e){
-                    Log.d("Exception", e.toString());   //error-checking. Raise an exception!
+                    Log.d("Exception", e.toString());   //Error-checking. Raise an exception!
                 }
             }
         });
