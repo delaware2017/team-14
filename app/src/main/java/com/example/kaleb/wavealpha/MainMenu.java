@@ -66,22 +66,17 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),VoucherActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), MainMenu.class);
-                startActivity(i);
-            }
-        });
 
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), SettingsMenu.class);
                 startActivity(i);
+                finish();
             }
         });
 

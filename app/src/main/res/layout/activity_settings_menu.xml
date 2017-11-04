@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.kaleb.wavealpha.MainMenu">
-    
+
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
