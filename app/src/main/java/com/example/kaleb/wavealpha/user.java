@@ -6,7 +6,8 @@ import java.util.Date;
  * Created by vqn on 11/3/17.
  */
 
-public class user {
+public class User {
+
     private String ssn, firstName, lastName, email, addr;
     private int age, phoneNo, balance;
     private Date dob;
