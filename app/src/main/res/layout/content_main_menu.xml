@@ -9,32 +9,69 @@
     tools:showIn="@layout/activity_main_menu"
     android:layout_weight="100">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:layout_gravity="center">
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="$500"
-            android:id="@+id/amount"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:textSize="25dp"
-            />
+            android:layout_gravity="center"
+            android:layout_margin="5dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="18 Days"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Balance: "
+                android:layout_weight="1"
+                android:height="40dp"
+                android:layout_gravity="left"
+                android:textSize="25dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="$0"
+                android:height="40dp"
+                android:id="@+id/amount"
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:layout_gravity="left"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:textSize="25dp"/>
+            android:layout_gravity="center"
+            android:layout_margin="5dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Next Visit: "
+                android:layout_weight="1"
+                android:height="40dp"
+                android:textSize="25dp"
+                android:layout_gravity="left"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="18 Days"
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:layout_gravity="left"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
