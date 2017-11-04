@@ -10,6 +10,10 @@ import android.view.View;
 import android.widget.Button;
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7e1132685a5fdebbb638da432b51df72ef2c53f2
 public class VoucherActivity extends AppCompatActivity {
     TextView showValue;
     int counter = 0;
