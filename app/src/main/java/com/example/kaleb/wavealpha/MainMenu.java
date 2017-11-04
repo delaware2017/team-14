@@ -4,11 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainMenu extends AppCompatActivity {
+
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +22,20 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras != null) {
+                this.user = new User(extras.getString("name"), extras.getString("email"), extras.getString("address"), extras.getInt("phone"), 0, extras.getString("password"), true);
+                Log.d("Balance", Integer.toString(user.getBalance()));
+                updateTextView(Integer.toString(user.getBalance()));
+            }
+        }
+
+        else{
+            Log.d("User", "Empty");
+        }
+
 
         int threshold = 5;
         int width = getResources().getDisplayMetrics().widthPixels/threshold;
@@ -44,6 +64,12 @@ public class MainMenu extends AppCompatActivity {
         });
 
     }
+
+    public void updateTextView(String toThis) {
+        TextView textView = (TextView) findViewById(R.id.amount);
+        textView.setText(toThis);
+    }
+
 }
 
 

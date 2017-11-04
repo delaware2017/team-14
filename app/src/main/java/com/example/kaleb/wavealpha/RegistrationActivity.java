@@ -26,12 +26,19 @@ public class RegistrationActivity extends AppCompatActivity {
                 EditText phone = (EditText) findViewById(R.id.input_mobile);
                 EditText password = (EditText) findViewById(R.id.input_password); // need to hash later
 
+                try {
+                    Intent i = new Intent(getApplicationContext(), MainMenu.class);
+                    i.putExtra("name", name.getText().toString());
+                    i.putExtra("email", email.getText().toString());
+                    i.putExtra("address", address.getText().toString());
+                    i.putExtra("phone", Integer.parseInt(phone.getText().toString()));
+                    i.putExtra("password", password.getText().toString());
+                    startActivity(i);
+                }
 
-                User user = new User(name.getText().toString(), email.getText().toString(),
-                        address.getText().toString(), Integer.parseInt(phone.getText().toString()),
-                        0, password.getText().toString(), true);
-                Intent i = new Intent(getApplicationContext(), MainMenu.class);
-                startActivity(i);
+                catch (Exception e){
+                    Log.d("Exception", e.toString());
+                }
             }
         });
 

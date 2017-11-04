@@ -21,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="$500"
+            android:id="@+id/amount"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:textSize="25dp"
