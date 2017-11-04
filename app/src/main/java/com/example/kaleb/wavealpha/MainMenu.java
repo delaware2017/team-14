@@ -10,21 +10,21 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity {       //define main menu class
 
     User user;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {       //create the main menu layout and toolbar
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        setTitle("Hello " + "User" + "!");
-        updateTextView("$" + Integer.toString(0), R.id.amount);
-        updateTextView("--" + " Days", R.id.trigger);
+        setTitle("Hello " + "User" + "!");                      //greet the user
+        updateTextView("$" + Integer.toString(0), R.id.amount); //Show the balance
+        updateTextView("--" + " Days", R.id.trigger);      //Show the remaining days
 
         user = new User("User", "", "", 0, 25, "", false, 0,0,0 );
 
