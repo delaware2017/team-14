@@ -10,11 +10,10 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class MainMenu extends AppCompatActivity {
 
-    User user;
+    User user = new User("User", "", "", 0, 0, "", false );
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +21,20 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle("Hello User!");
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras != null) {
-                this.user = new User(extras.getString("name"), extras.getString("email"), extras.getString("address"), extras.getInt("phone"), 0, extras.getString("password"), true);
+                user.setName(extras.getString("name"));
+                user.setEmail(extras.getString("email"));
+                user.setAddr(extras.getString("address"));
+                user.setPhoneNo(extras.getInt("phone"));
+                user.setPassword(extras.getString("password"));
+                user.setStatus(true);
                 Log.d("Balance", Integer.toString(user.getBalance()));
-                updateTextView(Integer.toString(user.getBalance()));
+                updateTextView(Integer.toString(user.getBalance()), R.id.amount);
+                setTitle("Hello " + user.getName() + "!");
             }
         }
 
@@ -81,8 +87,8 @@ public class MainMenu extends AppCompatActivity {
 
     }
 
-    public void updateTextView(String toThis) {
-        TextView textView = (TextView) findViewById(R.id.amount);
+    public void updateTextView(String toThis, int view) {
+        TextView textView = (TextView) findViewById(view);
         textView.setText(toThis);
     }
 
