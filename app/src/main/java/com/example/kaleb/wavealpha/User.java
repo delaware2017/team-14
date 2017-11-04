@@ -92,4 +92,9 @@ public class User {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+    public int makePurchase(int purchaseCost) {
+        return getBalance() - purchaseCost;
+
+    }
 }
