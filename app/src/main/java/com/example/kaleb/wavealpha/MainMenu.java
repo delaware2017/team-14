@@ -1,10 +1,12 @@
 package com.example.kaleb.wavealpha;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -21,21 +23,29 @@ public class MainMenu extends AppCompatActivity {
 
         int threshold = 4;
 
-        Button b =(Button) findViewById(R.id.stores);
+        Button stores =(Button) findViewById(R.id.stores);
         int width = getResources().getDisplayMetrics().widthPixels/threshold;
-        b.setLayoutParams(new LinearLayout.LayoutParams(width,width));
+        stores.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
-        b =(Button) findViewById(R.id.voucher);
+        Button voucher =(Button) findViewById(R.id.voucher);
         width = getResources().getDisplayMetrics().widthPixels/threshold;
-        b.setLayoutParams(new LinearLayout.LayoutParams(width,width));
+        voucher.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
-        b =(Button) findViewById(R.id.calendar);
+        Button calender =(Button) findViewById(R.id.calendar);
         width = getResources().getDisplayMetrics().widthPixels/threshold;
-        b.setLayoutParams(new LinearLayout.LayoutParams(width,width));
+        calender.setLayoutParams(new LinearLayout.LayoutParams(width,width));
 
-        b =(Button) findViewById(R.id.settings);
+        Button settings =(Button) findViewById(R.id.settings);
         width = getResources().getDisplayMetrics().widthPixels/threshold;
-        b.setLayoutParams(new LinearLayout.LayoutParams(width,width));
+        settings.setLayoutParams(new LinearLayout.LayoutParams(width,width));
+
+        voucher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),VoucherActivity.class);
+                startActivity(i);
+            }
+        });
 
     }
 }
