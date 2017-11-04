@@ -22,15 +22,14 @@ public class MainMenu extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        user = new User("User", "", "", 0, 25, "", false, 0,0,0 );
-
-        setTitle("Hello " + user.getName() + "!");
-        updateTextView("$" + Integer.toString(user.getBalance()), R.id.amount);
-        updateTextView(Integer.toString(user.getTriggerTime()) + " Days", R.id.trigger);
+        setTitle("Hello " + "User" + "!");
+        updateTextView("$" + Integer.toString(0), R.id.amount);
+        updateTextView("--" + " Days", R.id.trigger);
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras != null) {
+                user = new User("User", "", "", 0, 25, "", false, 0,0,0 );
                 if(extras.getString("name") != null) {
                     user.setName(extras.getString("name"));
                 }
@@ -91,9 +90,14 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), SettingsMenu.class);
                 startActivity(i);
-                finish();
             }
         });
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
 
     }
 
